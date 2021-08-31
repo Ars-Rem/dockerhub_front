@@ -5,6 +5,7 @@ pipeline {
         timeout(time: 30, unit: 'MINUTES')
         ansiColor('gnome-terminal')
     }
+
     stages {
         stage ('Build - front') {
             steps {
@@ -14,7 +15,7 @@ pipeline {
             }
 
             steps("send") {
-                sh "rsync --archive /git/react/front-react-coding-challenge-master/ /var/www/html/"
+                sh "rsync --archive /git/react/front-react-coding-challenge-master/build/* /var/www/html/"
                 
             }
 
