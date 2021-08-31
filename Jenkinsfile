@@ -1,11 +1,6 @@
 pipeline {
     agent any
-    options {
-        buildDiscarder(logRotator(numToKeepStr:'3'))
-        timeout(time: 30, unit: 'MINUTES')
-        ansiColor('gnome-terminal')
-    }
-
+    
     stages {
         stage ('Build - front') {
             steps {
@@ -19,6 +14,6 @@ pipeline {
                 
             }
 
-         }
+        }
     }
 }
