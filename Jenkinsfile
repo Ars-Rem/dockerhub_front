@@ -6,7 +6,6 @@ pipeline {
         ansiColor('gnome-terminal')
     }
     stages {
-        
         stage ('Build - front') {
             steps {
                 sh 'echo front'
