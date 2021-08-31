@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage('build-front') {
             steps {
-                sh "echo hello"
+                sh "npm install"
+                sh "npm run build"
             }
         } 
     }
