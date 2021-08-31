@@ -5,7 +5,7 @@ pipeline {
         stage ('Build - front') {
             steps {
                 sh 'echo front'
-                sh "npm install"
+                sh "sudo npm install"
                 sh "npm run build"
             }
 
