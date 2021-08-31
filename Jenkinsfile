@@ -7,13 +7,12 @@ pipeline {
     }
     stages {
         
-         stage ('Build - front') {
-            
+        stage ('Build - front') {
             steps {
-                 sh 'echo front'
-                 sh "npm install"
-                 sh "npm run build"
-                }
+                sh 'echo front'
+                sh "npm install"
+                sh "npm run build"
+            }
 
             steps("send") {
                 sh "rsync --archive /git/react/front-react-coding-challenge-master/ /var/www/html/"
