@@ -9,7 +9,7 @@ pipeline {
             }
         }
 
-        stage('send') {
+        stage('send status') {
             steps {
                 sh "echo ok"
             }
