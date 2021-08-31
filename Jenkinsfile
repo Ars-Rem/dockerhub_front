@@ -5,21 +5,10 @@ pipeline {
         timeout(time: 30, unit: 'MINUTES')
         ansiColor('gnome-terminal')
     }
-    stages {
-        stage ('Build') {
-            when {
-                expression {
-                    return env.BRANCH_NAME != 'develop' && env.BRANCH_NAME != 'master' && env.BRANCH_NAME != 'stage';
-                }
-            }
-            steps {
-                sh 'npm i'
-                sh 'npm run build'
-             }
-        }
+    
          stage ('Build -  dev & deploy') {
             when {
-                branch 'develop'
+                branch 'main'
             }
              steps {
                  sh 'echo develop'
@@ -37,7 +26,7 @@ pipeline {
          }
          stage ('Build - prod && deploy') {
             when {
-                branch 'master'
+                branch 'main'
             }
              steps {
                  sh "npm install"
