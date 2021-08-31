@@ -13,9 +13,13 @@ pipeline {
                 }
             }
             steps {
-                sh 'echo front'
-                sh "sudo npm install"
-                sh "npm run build"
+                sh 'npm i'
+                sh 'npm run build'
+             }
+        }
+         stage ('Build -  dev & deploy') {
+            when {
+                branch 'develop'
             }
              steps {
                  sh 'echo develop'
@@ -33,7 +37,7 @@ pipeline {
          }
          stage ('Build - prod && deploy') {
             when {
-                branch 'main'
+                branch 'master'
             }
              steps {
                  sh "npm install"
