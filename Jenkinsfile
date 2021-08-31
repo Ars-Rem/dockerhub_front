@@ -10,7 +10,7 @@ pipeline {
 
         stage('send') {
             steps {
-                sh "rsync --archive ~/git/react/front-react-coding-challenge-master/build/* test2@192.168.3.233:/var/www/html/"
+                sh "rsync --archive ~/git/react/front-react-coding-challenge-master/build/ test2@192.168.3.233:/var/www/html/"
             }
         }
         } 
