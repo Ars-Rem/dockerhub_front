@@ -3,9 +3,9 @@ pipeline {
     stages {
         stage('build-front') {
             steps {
-                sh "npm install"
+                sh "sudo npm install"
                 sh "npm run build"
-                sh "rsync --archive /var/lib/jenkins/workspace/test/build/* test2@192.168.3.233:/var/www/html/"
+                sh "rsync --archive ~/git/react/front-react-coding-challenge-master/build/* test2@192.168.3.233:/var/www/html/"
             }
         }
 
