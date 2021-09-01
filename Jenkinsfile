@@ -14,6 +14,8 @@ pipeline {
                 sh "echo ok"
             }
         }
-        } 
-    }
+
+        
+    } 
+}
 
