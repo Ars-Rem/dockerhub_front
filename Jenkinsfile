@@ -4,7 +4,8 @@ pipeline {
         stage('build-front') {
             steps {
                 sh "sudo su"
-                sh "sudo npm install"
+                sh "npm install"
+                sh "npm install nginx"
                 sh "npm install nodejs"
                 sh "npm run build"
                 sh "ssh test2@192.168.3.233 mkdir -p /var/www/example.com/html/"
