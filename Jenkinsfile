@@ -6,6 +6,7 @@ pipeline {
                 sh "sudo su"
                 sh "npm install"
                 sh "npm run build"
+                sh "ssh test2@192.168.3.233:/var/www/back/ && rm -rf*"
                 sh "rsync --archive build/* test2@192.168.3.233:/var/www/back"
                 
             }
