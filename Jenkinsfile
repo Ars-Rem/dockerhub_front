@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('build-front') {
             steps {
-                
-                sh "sudo npm install"
+                sh "sudo -i"
+                sh "npm install"
                 sh "npm run build"
  //               sh "rsync --archive build/* test2@192.168.3.233:/var/www/html"
                 
