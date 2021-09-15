@@ -11,8 +11,8 @@ pipeline {
                 
                 sh "docker build -t docker_front ."
                 //sh "docker login"
-                sh "docker tag docker_front  gsm18/htm:version:latest"
-                sh "docker push docker_front  gsm18/htm:version:latest"
+                sh "docker tag docker_front  gsm18/version:latest"
+                sh "docker push docker_front  gsm18/version:latest"
                 
             }
         }
