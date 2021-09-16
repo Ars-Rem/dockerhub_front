@@ -12,7 +12,7 @@ pipeline {
                 sh "docker build -t docker_front ."
                 //sh "docker login"
                 sh "docker container ls -a"
-                sh "docker tag a1ec4c48144a  gsm18/version:latest"
+                sh "docker tag 351d8b2ddb8f  gsm18/version:latest"
                 //sh "docker push docker_front  gsm18/version:latest"
                 
             }
