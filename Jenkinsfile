@@ -12,8 +12,8 @@ pipeline {
                 sh "docker build -t docker_front:latest ."
                 sh "docker container ls -a"
                 sh "winpty docker login"
-                sh "docker tag 351d8b2ddb8f  gsm18/version:latest"
-                sh "docker push  gsm18/version:latest"
+                sh "docker tag 351d8b2ddb8f  ars18/version:latest"
+                sh "docker push ars18/version:latest"
                 
             }
         }
