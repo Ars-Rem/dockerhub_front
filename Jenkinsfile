@@ -11,13 +11,13 @@ pipeline {
                 
                 sh "docker build -t docker_front:v1 ."
                 sh "docker container ls -a"
-                sh "winpty docker login"
+                sh "docker login"
                 sh "docker tag 351d8b2ddb8f  ars18/docker_front:v1"
                 sh "docker push ars18/docker_front:v1"
                 
             }
         }
-        
+
 
         
 
