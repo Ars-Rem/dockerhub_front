@@ -10,8 +10,8 @@ pipeline {
                 sh "sudo chmod 666 /var/run/docker.sock"
                 
                 sh "docker build -t docker_front:latest ."
-                //sh "docker login"
                 sh "docker container ls -a"
+                sh "docker login"
                 sh "docker tag 351d8b2ddb8f  gsm18/version:latest"
                 sh "docker push  gsm18/version:latest"
                 
