@@ -15,7 +15,7 @@ pipeline {
                 sh "sudo chmod 666 /var/run/docker.sock"
                 
                 sh "docker build -t ars18/docker_front:v1 ."
-                sh "docker commit front ars18/docker_front:v1"
+                sh "docker commit docker_front ars18/docker_front:v1"
                 //sh "docker run -it docker_front:v1"
                 sh "docker container ls -a"
                 
