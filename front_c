@@ -14,9 +14,9 @@ pipeline {
             steps {
                 sh "sudo chmod 666 /var/run/docker.sock"
                 
-                sh "docker build -t ars18/docker_front:v1 ."
-                sh "docker commit docker_front ars18/docker_front:v1"
-                //sh "docker run -it docker_front:v1"
+                sh "docker build -t ars18/docker_front:front_c ."
+                sh "docker commit docker_front ars18/docker_front:front_c"
+                //sh "docker run -it docker_front:front_c"
                 sh "docker container ls -a"
                 
                 //sh "docker tag 351d8b2ddb8f  ars18/docker_front:v1"
