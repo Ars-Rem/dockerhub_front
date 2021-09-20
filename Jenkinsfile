@@ -20,6 +20,7 @@ pipeline {
         stage('docker-run-front') {
             steps {        
                 sh "docker stop front"
+                
                 sh "docker rm front"
                 sh "docker run -d --name front ars18/docker_front:front_c"
             }
@@ -30,6 +31,19 @@ pipeline {
                 sh "docker login -u ${NAME} -p ${PASS} docker.io"
                 sh "docker push ars18/docker_front:front_c"
             }                
+        }
+    }
+    catch(all) {
+        currentBuild.result = 'FAILURE'
+    }   
+
+    if(currentBuild.result != 'FAILURE') {
+        stages{
+            stage("Post Build") {
+                steps {
+                    build("DSL-Controll-Demo-Fibonacci-7")
+                }
+            }
         }
     }
 }
