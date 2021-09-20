@@ -13,14 +13,13 @@ pipeline {
         stage('docker-f') {
             steps {
                 sh "sudo chmod 666 /var/run/docker.sock"
-                sh "echo ${NAME}"
                 sh "docker build -t ars18/docker_front:front_c ."
                 sh "docker stop front"
                 sh "docker rm front"
                 sh "docker run -d --name front ars18/docker_front:front_c"
                 //sh "docker commit docker_front ars18/docker_front:front_c"
                 sh "docker commit front ars18/docker_front:front_c"
-                //sh "docker login"
+                sh "docker login -u ${NAME} -p ${PASS} docker.io"
                 sh "docker push ars18/docker_front:front_c"
                 
                 //sh "docker tag 351d8b2ddb8f  ars18/docker_front:v1"
