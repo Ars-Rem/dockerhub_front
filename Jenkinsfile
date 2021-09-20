@@ -33,6 +33,7 @@ pipeline {
             }                
         }
     }
+}
     catch(all) {
         currentBuild.result = 'FAILURE'
     }   
@@ -46,4 +47,4 @@ pipeline {
             }
         }
     }
-}
+
