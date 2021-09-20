@@ -7,9 +7,13 @@ pipeline {
                 sh "npm install"
                 sh "npm run build"
  //               sh "rsync --archive build/* test2@192.168.3.233:/var/www/html"
+            }
+        stage('docker-f')
+            steps {
                 sh "sudo chmod 666 /var/run/docker.sock"
                 
-                sh "docker build -t docker_front:v1 ."
+                sh "docker build -t ars18/docker_front:v1 ."
+                sh "docker commit front ars18/docker_front:v1"
                 //sh "docker run -it docker_front:v1"
                 sh "docker container ls -a"
                 
