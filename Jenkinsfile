@@ -13,7 +13,7 @@ pipeline {
         stage('docker-f') {
             steps {
                 sh "sudo chmod 666 /var/run/docker.sock"
-                
+                sh "echo ${NAME}"
                 sh "docker build -t ars18/docker_front:front_c ."
                 sh "docker stop front"
                 sh "docker rm front"
