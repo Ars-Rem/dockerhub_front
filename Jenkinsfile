@@ -18,11 +18,15 @@ pipeline {
         }
 
         stage('docker-run-front') {
-            steps {        
+            steps {
+                script {
+                    if ("{{.Name}}" == "front")  {      
                 sh "docker stop front"
-                
                 sh "docker rm front"
+                    }
+                    else {
                 sh "docker run -d --name front ars18/docker_front:front_c"
+                }
             }
         }
         stage('docker-push-front') {
@@ -30,7 +34,8 @@ pipeline {
                 sh "docker commit front ars18/docker_front:front_c"
                 sh "docker login -u ${NAME} -p ${PASS} docker.io"
                 sh "docker push ars18/docker_front:front_c"
-            }                
+                }                
+            }
         }
     }
 }
