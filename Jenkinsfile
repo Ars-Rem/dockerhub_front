@@ -29,6 +29,7 @@ pipeline {
                 }
             }
         }
+        }
         stage('docker-push-front') {
             steps {
                 sh "docker commit front ars18/docker_front:front_c"
