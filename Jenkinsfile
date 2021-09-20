@@ -10,6 +10,7 @@ pipeline {
                 sh "sudo chmod 666 /var/run/docker.sock"
                 
                 sh "docker build -t docker_front:v1 ."
+                sh "docker run -it docker_front:v1"
                 sh "docker container ls -a"
                 
                 //sh "docker tag 351d8b2ddb8f  ars18/docker_front:v1"
