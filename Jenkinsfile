@@ -18,7 +18,7 @@ pipeline {
                 sh "docker run -d --name front ars18/docker_front:front_c"
                 //sh "docker commit docker_front ars18/docker_front:front_c"
                 sh "docker commit front ars18/docker_front:front_c"
-
+                sh "docker rm front"
                 sh "docker push ars18/docker_front:front_c"
                 
                 //sh "docker tag 351d8b2ddb8f  ars18/docker_front:v1"
