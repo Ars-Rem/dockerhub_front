@@ -34,17 +34,5 @@ pipeline {
         }
     }
 }
-    catch(all) {
-        currentBuild.result = 'FAILURE'
-    }   
-
-    if(currentBuild.result != 'FAILURE') {
-        stages{
-            stage("Post Build") {
-                steps {
-                    build("DSL-Controll-Demo-Fibonacci-7")
-                }
-            }
-        }
-    }
+    
 
