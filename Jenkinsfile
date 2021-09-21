@@ -20,7 +20,6 @@ pipeline {
         stage('docker-run-front') {
             steps {
                 script {
-                    "{{.Name}}"
                     if ("{{.Name}}" == "front")  {      
                 sh "docker stop front"
                 sh "docker rm front"
