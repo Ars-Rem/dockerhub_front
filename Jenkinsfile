@@ -28,7 +28,7 @@ pipeline {
                 sh "docker run -d --name front ars18/docker_front:front_c"
                 }
             }
-        }
+        
         
         stage('docker-push-front') {
             steps {
@@ -38,7 +38,7 @@ pipeline {
             }
         }
     }        
-
+}
 
 
     
