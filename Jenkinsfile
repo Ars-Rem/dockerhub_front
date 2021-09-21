@@ -19,12 +19,12 @@ pipeline {
 
         stage('docker-run-front') {
             steps {
-                script {
-                    if ("{{.Name}}" == "front")  {      
+                //script {
+                //    if ("{{.Name}}" == "front")  {      
                 sh "docker stop front"
                 sh "docker rm front"
-                    }
-                    else {
+                //    }
+                //    else {
                 sh "docker run -d --name front ars18/docker_front:front_c"
                 }
             }
