@@ -21,8 +21,8 @@ pipeline {
             steps {
                 //script {
                 //    if ("{{.Name}}" == "front")  {      
-                sh "docker stop front"
-                sh "docker rm front"
+                //sh "docker stop front"
+                //sh "docker rm front"
                 //    }
                 //    else {
                 sh "docker run -d --name front ${NAME}/docker_front:front_c"
