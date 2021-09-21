@@ -13,7 +13,7 @@ pipeline {
         stage('docker-build-front') {
             steps {
                 sh "sudo chmod 666 /var/run/docker.sock"
-                sh "docker build -t ars18/docker_front:front_c ."
+                sh "docker build -t ${NAME}/docker_front:front_c ."
             }
         }
 
@@ -25,16 +25,16 @@ pipeline {
                 sh "docker rm front"
                 //    }
                 //    else {
-                sh "docker run -d --name front ars18/docker_front:front_c"
+                sh "docker run -d --name front ${NAME}/docker_front:front_c"
                 }
             }
         
         
         stage('docker-push-front') {
             steps {
-                sh "docker commit front ars18/docker_front:front_c"
+                sh "docker commit front ${NAME}/docker_front:front_c"
                 sh "docker login -u ${NAME} -p ${PASS} docker.io"
-                sh "docker push ars18/docker_front:front_c"
+                sh "docker push ${NAME}/docker_front:front_c"
             }
         }
     }        
