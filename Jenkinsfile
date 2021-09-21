@@ -22,7 +22,7 @@ pipeline {
                 sh "docker stop \$(docker ps -a -q)"
                 sh "docker rm \$(docker ps -a -q)"
                 sh "docker rmi -f \$(docker images -a -q)"
-                sh "docker run -d --name front ${NAME}/docker_front:front_c"
+                sh "docker run -d --name -p 3001:80 front ${NAME}/docker_front:front_c"
                 }
             }
         
