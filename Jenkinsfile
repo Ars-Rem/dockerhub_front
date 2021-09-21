@@ -24,7 +24,7 @@ pipeline {
                 //sh "docker rmi -f \$(docker images -a -q)"
                 sh "docker stop front"
                 sh "docker rm front"
-                sh "docker run -d --name front -p 3001:80 ${NAME}/docker_front:front_c"
+                sh "docker run -d --name front ${NAME}/docker_front:front_c"
                 }
             }
         
