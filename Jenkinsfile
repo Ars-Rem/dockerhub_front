@@ -29,16 +29,17 @@ pipeline {
                 }
             }
         }
-        }
+        
         stage('docker-push-front') {
             steps {
                 sh "docker commit front ars18/docker_front:front_c"
                 sh "docker login -u ${NAME} -p ${PASS} docker.io"
                 sh "docker push ars18/docker_front:front_c"
-                }                
             }
         }
-}
+    }        
+
+
 
     
 
