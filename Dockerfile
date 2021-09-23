@@ -8,6 +8,5 @@ COPY nginx/* /etc/nginx/conf.d/
 #RUN mkdir -p /etc/nginx/sites-enabled/
 #RUN ln -s /etc/nginx/sites-available/to_app.conf /etc/nginx/sites-enabled/
 #RUN ln -s /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled/
-RUN cat etc/hosts
 EXPOSE 80
 
