@@ -5,7 +5,7 @@ import store from './createStore';
 let socket = null;
 
 export const connectSocket = () => {
-  socket = io('http://${IP}:${PORT}');
+  socket = io('http://194.44.111.70:4735');
   socket.on('new bleat', (data) => {
     store.dispatch(AddMessageRequest(JSON.parse(data)));
   });
