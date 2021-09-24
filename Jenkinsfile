@@ -26,6 +26,7 @@ pipeline {
                 sh "docker rm front"
                 sh "docker create -t -i ${NAME}/docker_front:front_c --name front -p 80:80"
                 sh "docker run -d --name front -p 80:80 ${NAME}/docker_front:front_c"
+                sh "docker port front"
                 }
             }
         
