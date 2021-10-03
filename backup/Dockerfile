@@ -1,5 +1,5 @@
 #frontend
-FROM nginx:latest
+FROM docker2021repos/nginx:latest
 COPY build /usr/share/nginx/html
 RUN rm /etc/nginx/conf.d/default.conf
 COPY nginx/* /etc/nginx/conf.d/
