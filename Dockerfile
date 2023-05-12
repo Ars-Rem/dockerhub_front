@@ -10,4 +10,3 @@ COPY nginx/default.conf /etc/nginx/conf.d/
 #RUN ln -s /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled/
 EXPOSE 80
 
-
