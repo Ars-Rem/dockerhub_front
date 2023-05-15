@@ -12,10 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: runs 
-        runs:
-          using: 'node16'
-          #main: 'main.js'
         
     - name: Check out code
       uses: actions/checkout@v2
